@@ -3,22 +3,25 @@ lines = input1.readlines()
 
 ### PART 1 ###
 
-# previous = 100000000
+previous = 100000000
 
-# greaterThanCounter = 0
+greaterThanCounter = 0
 
-# for line in lines:
-#     if previous < int(line):
-#         greaterThanCounter += 1
+for line in lines:
+    if previous < int(line):
+        greaterThanCounter += 1
 
-#     previous = int(line)
+    previous = int(line)
 
-# print(greaterThanCounter)
+print("Part 1 answer:", greaterThanCounter)
+
+### PART 2 ###
 
 sums = []
 
 count = 0
 
+# add sums to list
 for line in lines:
     if count == 0:
         prev1 = int(line)
@@ -34,9 +37,10 @@ for line in lines:
 count = 0
 previous = 9999999999
 
+# calculate greater or lesser
 for sum in sums:
     if previous < sum:
         count += 1
     previous = sum
 
-print(count)
+print('Part 2 answer:', count)
